@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TodoItems from './TodoItems';
-
+import './TodoList.css';
  
 class TodoList extends React.Component {
   constructor(props, context) {
@@ -10,6 +10,7 @@ class TodoList extends React.Component {
       items: [] //We are defining items array/property that will be responsible for storing all of the various items that you can enter
     };
 
+    // Making the addItem event handler
     this.addItem = this.addItem.bind(this);
   }
   
@@ -32,7 +33,7 @@ class TodoList extends React.Component {
  
     this._inputElement.value = "";
 
-    console.log(itemArray);
+    //console.log(itemArray);
    
     e.preventDefault(); // We are overriding this event's default behavior. The reason has to do with how form submission works. By default, when you submit a form, the page reloads and clears everything out. We definitely don't want that. By calling preventDefault we block the default behavior.
   };
@@ -43,7 +44,7 @@ class TodoList extends React.Component {
           <div className="header">
             <form onSubmit={this.addItem}>
               <input ref={(a) => this._inputElement = a} 
-                      placeholder="enter task">
+                     placeholder="enter task">
               </input>
               <button type="submit">add</button>
             </form>
