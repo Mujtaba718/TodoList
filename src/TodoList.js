@@ -24,6 +24,7 @@ class TodoList extends React.Component {
           key: Date.now()
         }
       );
+    }
     
     this.setState({
       items: itemArray
